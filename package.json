@@ -1,5 +1,5 @@
 {
-  "name": "node-red-contrib-cloudantplus",
+  "name": "node-red-contrib-cloudantplus-bulk",
   "version": "0.2",
   "description": "A Node-RED node to access Cloudant and couchdb databases, supports views, query and bulk operations.",
   "dependencies": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hammoaj/node-red-contrib-cloudantplus.git"
+    "url": "https://github.com/burdena/node-red-contrib-cloudantplus-bulk.git"
   },
   "license": "Apache-2.0",
   "keywords": [
