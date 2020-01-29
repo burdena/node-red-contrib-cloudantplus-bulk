@@ -151,7 +151,13 @@ module.exports = function(RED) {
 
         function handleMessage(cloudant, node, msg) {
           if (node.operation === "insert") {
-            var data  = Object.assign({}, node.payonly ? msg.payload : msg);
+            
+            var data  = node.payonly ? msg.payload : msg;
+            if (Object.prototype.toString.call( data ) === '[object Array]') {
+              data  = Object.assign([], node.payonly ? msg.payload : msg);
+            } else { 
+              data  = Object.assign({}, node.payonly ? msg.payload : msg);
+            }
             delete data._msgid;
             var root = node.payonly ? "payload" : "msg";
             var doc  = parseMessage(data, root);
